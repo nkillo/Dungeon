@@ -3484,11 +3484,14 @@ function gameLoop(wst : wgpu_state, wasmExports : WasmExports){
         }
 
         if(lastp1a != p1a){
+            // console.log("PLAYER 1 ATTACK INPUT!!");
+
             if(lastp1a == 0)wasmExports.AppendKeyDownEvent(frame_input_types.finput_keySPACE);
             if(p1a == 0)wasmExports.AppendKeyUpEvent(frame_input_types.finput_keySPACE);
         }
 
         if(lastp1b != p1b){
+            // console.log("PLAYER 1 INTERACT INPUT!!");
             if(lastp1b == 0)wasmExports.AppendKeyDownEvent(frame_input_types.finput_keyF);
             if(p1b == 0)wasmExports.AppendKeyUpEvent(frame_input_types.finput_keyF);
         }
@@ -4004,6 +4007,12 @@ async function main(){
         MakeErrorDebugElement(error as Error);
         throw error;
     }
+
+    
+    const device = wst.device;
+    const format = wst.surfaceFormat;
+    wst.context.configure({device, format, alphaMode: "premultiplied"});
+    ResizeWGPU(wst);
 
     configure(wst);
 
