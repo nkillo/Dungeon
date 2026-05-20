@@ -1,0 +1,18 @@
+{
+  "$schema": "https://rcade.dev/manifest.schema.json",
+  "name": "Dungeon",
+  "display_name": "Dungeon",
+  "description": "Take a wild guess",
+  "visibility": "internal",
+  "authors": [
+    {
+      "display_name": "NateKillo"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "@rcade/input-classic",
+      "version": "1.0.0"
+    }
+  ]
+}
