@@ -4009,13 +4009,11 @@ async function main(){
     }
 
     
-    const device = wst.device;
-    const format = wst.surfaceFormat;
-    wst.context.configure({device, format, alphaMode: "premultiplied"});
-    ResizeWGPU(wst);
 
     configure(wst);
 
+    return;
+    
     let wasm : WebAssembly.Instance;
 
     try{
